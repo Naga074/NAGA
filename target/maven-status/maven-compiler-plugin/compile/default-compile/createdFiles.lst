@@ -1,0 +1,12 @@
+Login.class
+Venue.class
+MovieDAO.class
+Validate.class
+Seat.class
+Movie.class
+SeatServlet.class
+Welcome.class
+MovieServlet.class
+SeatDAO.class
+VenueServlet.class
+VenueDAO.class

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Movie Seat Booking</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #242333;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      font-family: 'Lato', sans-serif;
+      margin: 0;
+    }
+
+    .container {
+      perspective: 1000px;
+      margin-bottom: 30px;
+    }
+
+    .seat {
+      background-color: #444451;
+      height: 18px;
+      width: 20px;
+      margin: 3px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+
+    .seat.selected {
+      background-color: #6feaf6;
+    }
+
+    .seat.occupied {
+      background-color: rgb(145, 182, 140);
+    }
+
+    .seat:nth-of-type(2) {
+      margin-right: 18px;
+    }
+
+    .seat:nth-last-of-type(2) {
+      margin-left: 18px;
+    }
+
+    .seat:not(.occupied):hover {
+      cursor: pointer;
+      transform: scale(1.2);
+    }
+
+    .showcase .seat:not(.occupied):hover {
+      cursor: default;
+      transform: scale(1);
+    }
+
+    .showcase {
+      background: rgba(226, 17, 163, 0.623);
+      padding: 10px 10px;
+      border-radius: 5px;
+      color: rgb(216, 203, 203);
+      list-style-type: none;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .showcase li {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 10px;
+    }
+
+    .showcase li small {
+      margin-left: 2px;
+    }
+
+    .row {
+      display: flex;
+    }
+
+    .screen {
+      background-color: rgb(49, 231, 89);
+      height: 70px;
+      width: 100%;
+      margin: 15px 0;
+      transform: rotateX(-45deg);
+      box-shadow: 0px 3px 15px rgba(255, 255, 255, 0.7);
+    }
+
+    p.text {
+      margin: 5px 0;
+    }
+
+    p.text span {
+      color: #6feaf6;
+    }
+
+    .payment {
+      background-color: rgb(230, 24, 24);
+      padding: 10px;
+      block-size: auto;
+      font-style: italic;
+      color: #fff;
+    }
+    .col
+    {
+      color: #fff;
+    }
+  </style>
+  <link rel="stylesheet" href="movie.css">
+
+</head>
+
+<body background="bg.jpg">
+  <br>
+  <br>
+  <br>
+  <h3 align="center">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <font face="cinzel" size="4" class="col">
+      <a href="Home.html" style="color: white;">HOME </a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <!-- <a href="seats.html">SEATS</a>&nbsp;&nbsp;&nbsp;&nbsp; -->
+      <a href="Movie.html"style="color: white;">MOVIES</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="Logout.html" style="color: white;">LOG OUT</a>
+    </font>
+  </h3>
+  <br>
+  <br>
+  <div id="movie">
+  </div>
+  </div>
+  <ol class="showcase">
+    <li>
+      <div class="seat"></div>
+      <small>N/A</small>
+    </li>
+    <li>
+      <div class="seat selected"></div>
+      <small>Selected</small>
+    </li>
+    <li>
+      <div class="seat occupied"></div>
+      <small>Occupied</small>
+    </li>
+  </ol>
+  <div class="container">
+    <div class="screen"></div>
+    <div class="row">
+      <div class="seat">&nbsp;1</div>
+      <div class="seat">&nbsp;2</div>
+      <div class="seat">&nbsp;3</div>
+      <div class="seat">&nbsp;4</div>
+    </div>
+    <div class="row">
+      <div class="seat"> &nbsp;5</div>
+      <div class="seat">&nbsp;6</div>
+      <div class="seat">&nbsp;7</div>
+      <div class="seat">&nbsp;8</div>
+    </div>
+    <div class="row">
+      <div class="seat">&nbsp;9</div>
+      <div class="seat">10</div>
+      <div class="seat">11</div>
+      <div class="seat">12</div>
+    </div>
+  </div>
+  <p class="text">
+    You have selected <span id="count">0</span> seats
+  </p>
+  <br>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="payment">PAYMENT</button>
+  <script src="Seat.js"></script>
+</body>
+
+</html>

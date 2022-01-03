@@ -1,0 +1,10 @@
+table, th, td {
+    border: 1px solid rgb(134, 130, 130);
+    border-collapse: collapse;
+    font-size: 125%;
+    font-style: oblique;
+    color: white;
+  }
+  th, td {
+    background-color: #474252;
+  }
